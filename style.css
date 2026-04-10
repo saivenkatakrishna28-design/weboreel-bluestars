@@ -7,14 +7,11 @@
 :root {
   --bg-dark: #030816;
   --bg-mid: #091126;
-  --bg-soft: #0d1833;
   --primary: #00a8ff;
   --secondary: #7df9ff;
-  --accent: #5be7ff;
   --text: #eef7ff;
   --muted: #b8cae0;
   --glass: rgba(255, 255, 255, 0.06);
-  --glass-strong: rgba(255, 255, 255, 0.08);
   --border: rgba(0, 168, 255, 0.22);
   --shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   --radius: 24px;
@@ -196,7 +193,8 @@ img {
 .hero h1,
 .section-heading h2,
 .intro-card h2,
-.impact-card h2 {
+.impact-card h2,
+.quote-card h2 {
   font-family: "Orbitron", sans-serif;
   font-size: clamp(2rem, 4vw, 4rem);
   line-height: 1.15;
@@ -215,10 +213,46 @@ img {
 .collab-card p,
 .impact-card p,
 .team-card p,
-.intro-card p {
+.intro-card p,
+.quote-card p {
   color: var(--muted);
   line-height: 1.85;
   font-size: 1rem;
+}
+
+.mode-switch {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 18px 0 12px;
+}
+
+.mode-btn {
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(125, 249, 255, 0.24);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text);
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.mode-btn:hover {
+  transform: translateY(-2px);
+  border-color: rgba(125, 249, 255, 0.45);
+}
+
+.active-mode {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: #03111d;
+  border-color: transparent;
+}
+
+.mode-text {
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 8px;
 }
 
 .typed-wrap {
@@ -300,39 +334,47 @@ img {
   color: var(--muted);
 }
 
-.hero-image-wrap {
+.hero-logo-wrap {
   position: relative;
   width: min(360px, 100%);
   margin: 0 auto;
 }
 
-.hero-image-ring {
+.hero-logo-ring {
   position: absolute;
   inset: -12px;
-  border-radius: 50%;
+  border-radius: 32px;
   background: conic-gradient(from 180deg, var(--primary), var(--secondary), var(--primary));
   filter: blur(18px);
-  opacity: 0.45;
+  opacity: 0.4;
 }
 
-.hero-image {
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid rgba(125, 249, 255, 0.32);
+.hero-logo {
   position: relative;
-  box-shadow: 0 0 40px rgba(0, 168, 255, 0.3);
+  width: 100%;
+  min-height: 360px;
+  object-fit: cover;
+  border-radius: 32px;
+  border: 2px solid rgba(125, 249, 255, 0.28);
+  box-shadow: 0 0 40px rgba(0, 168, 255, 0.28);
 }
 
 .intro-card,
-.impact-card {
+.impact-card,
+.quote-card {
   padding: 34px;
   text-align: center;
 }
 
 .intro-card h2,
-.impact-card h2 {
+.impact-card h2,
+.quote-card h2 {
   font-size: clamp(1.7rem, 3vw, 2.8rem);
+}
+
+.quote-btn {
+  border: none;
+  cursor: pointer;
 }
 
 .section-heading {
@@ -505,6 +547,39 @@ img {
   margin-bottom: 10px;
 }
 
+.result-strengths {
+  margin-top: 18px;
+}
+
+.strength-item {
+  margin-bottom: 14px;
+}
+
+.strength-label {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--text);
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.strength-track {
+  width: 100%;
+  height: 12px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  width: 0;
+  transition: width 0.8s ease;
+}
+
 .insight-cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -531,17 +606,9 @@ img {
   background: linear-gradient(90deg, var(--primary), var(--secondary));
 }
 
-.fill-82 {
-  width: 82%;
-}
-
-.fill-76 {
-  width: 76%;
-}
-
-.fill-71 {
-  width: 71%;
-}
+.fill-82 { width: 82%; }
+.fill-76 { width: 76%; }
+.fill-71 { width: 71%; }
 
 .insight-card span {
   color: var(--secondary);
@@ -676,8 +743,12 @@ img {
     padding: 28px 20px;
   }
 
-  .hero-image-wrap {
+  .hero-logo-wrap {
     width: min(280px, 90%);
+  }
+
+  .hero-logo {
+    min-height: 280px;
   }
 
   .hero-stats {
@@ -686,6 +757,10 @@ img {
 
   .result-card {
     min-height: 280px;
+  }
+
+  .mode-switch {
+    justify-content: center;
   }
 }
 
@@ -704,6 +779,7 @@ img {
   .hero-content,
   .intro-card,
   .impact-card,
+  .quote-card,
   .form-card,
   .result-card,
   .notes-board,
@@ -723,7 +799,8 @@ img {
   .hero h1,
   .section-heading h2,
   .intro-card h2,
-  .impact-card h2 {
+  .impact-card h2,
+  .quote-card h2 {
     line-height: 1.2;
   }
 }
