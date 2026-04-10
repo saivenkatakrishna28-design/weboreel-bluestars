@@ -60,13 +60,11 @@ function createParticles() {
   for (let i = 0; i < particleCount; i++) {
     const particle = document.createElement("span");
     particle.classList.add("particle");
-
     particle.style.left = `${Math.random() * 100}%`;
     particle.style.top = `${Math.random() * 100}%`;
     particle.style.animationDuration = `${8 + Math.random() * 10}s`;
     particle.style.animationDelay = `${Math.random() * 5}s`;
     particle.style.opacity = Math.random();
-
     particlesContainer.appendChild(particle);
   }
 }
@@ -125,6 +123,74 @@ function getPersonaResult(wake, focus, goal, style) {
   };
 }
 
+function getStrengthScores(wake, focus, goal, style) {
+  let creativity = 60;
+  let leadership = 55;
+  let innovation = 58;
+
+  if (focus === "building") {
+    creativity += 15;
+    innovation += 12;
+  }
+
+  if (focus === "thinking") {
+    innovation += 14;
+  }
+
+  if (focus === "leading") {
+    leadership += 22;
+    creativity += 5;
+  }
+
+  if (focus === "exploring") {
+    innovation += 18;
+    creativity += 10;
+  }
+
+  if (goal === "ai") {
+    innovation += 18;
+  }
+
+  if (goal === "innovation") {
+    creativity += 12;
+    innovation += 12;
+  }
+
+  if (goal === "leadership") {
+    leadership += 16;
+  }
+
+  if (style === "team") {
+    leadership += 12;
+  }
+
+  if (style === "creative") {
+    creativity += 14;
+    innovation += 8;
+  }
+
+  if (style === "mixed") {
+    creativity += 6;
+    leadership += 6;
+    innovation += 6;
+  }
+
+  if (wake === "early") {
+    leadership += 6;
+  }
+
+  if (wake === "late") {
+    creativity += 6;
+    innovation += 6;
+  }
+
+  creativity = Math.min(creativity, 98);
+  leadership = Math.min(leadership, 98);
+  innovation = Math.min(innovation, 98);
+
+  return { creativity, leadership, innovation };
+}
+
 personaForm.addEventListener("submit", (e) => {
   e.preventDefault();
 
@@ -135,6 +201,7 @@ personaForm.addEventListener("submit", (e) => {
   const style = document.getElementById("style").value;
 
   const result = getPersonaResult(wake, focus, goal, style);
+  const scores = getStrengthScores(wake, focus, goal, style);
 
   const responseData = {
     name,
@@ -143,6 +210,7 @@ personaForm.addEventListener("submit", (e) => {
     goal,
     style,
     result: result.title,
+    scores,
     time: new Date().toLocaleString()
   };
 
@@ -160,6 +228,39 @@ personaForm.addEventListener("submit", (e) => {
       <p><strong>Your innovation persona:</strong> ${result.title}</p>
       <p>${result.text}</p>
       <p><strong>Future path selected:</strong> ${goal.toUpperCase()}</p>
+
+      <div class="result-strengths">
+        <div class="strength-item">
+          <div class="strength-label">
+            <span>Creativity</span>
+            <span>${scores.creativity}%</span>
+          </div>
+          <div class="strength-track">
+            <div class="strength-fill" style="width:${scores.creativity}%"></div>
+          </div>
+        </div>
+
+        <div class="strength-item">
+          <div class="strength-label">
+            <span>Leadership</span>
+            <span>${scores.leadership}%</span>
+          </div>
+          <div class="strength-track">
+            <div class="strength-fill" style="width:${scores.leadership}%"></div>
+          </div>
+        </div>
+
+        <div class="strength-item">
+          <div class="strength-label">
+            <span>Innovation Energy</span>
+            <span>${scores.innovation}%</span>
+          </div>
+          <div class="strength-track">
+            <div class="strength-fill" style="width:${scores.innovation}%"></div>
+          </div>
+        </div>
+      </div>
+
       <p>Your response has been saved in this browser as part of the interactive experience.</p>
     </div>
   `;
@@ -205,4 +306,50 @@ window.addEventListener("scroll", () => {
       link.classList.add("active-link");
     }
   });
+});
+
+const teamModeBtn = document.getElementById("teamModeBtn");
+const soloModeBtn = document.getElementById("soloModeBtn");
+const heroDescription = document.getElementById("heroDescription");
+const modeText = document.getElementById("modeText");
+
+teamModeBtn.addEventListener("click", () => {
+  teamModeBtn.classList.add("active-mode");
+  soloModeBtn.classList.remove("active-mode");
+
+  heroDescription.textContent =
+    "We are Bluestars, a team of students transforming daily learning, teamwork, coding, creativity, and ambition into a shared journey toward future-ready innovation.";
+
+  modeText.textContent =
+    "Team Mode highlights collaboration, shared growth, and the energy of building together.";
+});
+
+soloModeBtn.addEventListener("click", () => {
+  soloModeBtn.classList.add("active-mode");
+  teamModeBtn.classList.remove("active-mode");
+
+  heroDescription.textContent =
+    "This experience also reflects the power of individual discipline, self-learning, focused growth, and the mindset needed to become a future innovator.";
+
+  modeText.textContent =
+    "Solo Mode highlights personal ambition, discipline, and self-driven growth within the innovation journey.";
+});
+
+const quoteBtn = document.getElementById("quoteBtn");
+const quoteText = document.getElementById("quoteText");
+
+const quotes = [
+  "Every great innovation begins with one disciplined step taken consistently.",
+  "Teamwork turns imagination into real impact.",
+  "The future belongs to those who build before they feel fully ready.",
+  "Student life is the training ground of future innovators.",
+  "Creativity grows stronger when curiosity meets action.",
+  "A strong team can turn simple ideas into meaningful change.",
+  "Innovation is not luck. It is discipline, courage, and repetition.",
+  "Dreaming matters, but building matters more."
+];
+
+quoteBtn.addEventListener("click", () => {
+  const randomIndex = Math.floor(Math.random() * quotes.length);
+  quoteText.textContent = quotes[randomIndex];
 });
