@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bluestars – A Day in the Life of Future Innovators</title>
+  <title>Bluestars - A Day in the Life of Future Innovators</title>
   <meta
     name="description"
     content="Bluestars is an interactive Weboreel experience showcasing student life, teamwork, coding, AI exploration, and future ambition."
@@ -48,14 +48,23 @@
           <p class="tag">NATIONAL LEVEL WEBOREEL AI HACKATHON</p>
 
           <h1>
-            Bluestars –
+            Bluestars -
             <span>A Day in the Life of Future Innovators</span>
           </h1>
 
-          <p class="hero-description">
+          <p class="hero-description" id="heroDescription">
             We are Bluestars, a team of students transforming daily learning,
             teamwork, coding, creativity, and ambition into a shared journey
             toward future-ready innovation.
+          </p>
+
+          <div class="mode-switch">
+            <button class="mode-btn active-mode" id="teamModeBtn" type="button">Team Mode</button>
+            <button class="mode-btn" id="soloModeBtn" type="button">Solo Mode</button>
+          </div>
+
+          <p class="mode-text" id="modeText">
+            Team Mode highlights collaboration, shared growth, and the energy of building together.
           </p>
 
           <div class="typed-wrap">
@@ -85,12 +94,12 @@
           </div>
         </div>
 
-        <div class="hero-image-wrap">
-          <div class="hero-image-ring"></div>
+        <div class="hero-logo-wrap">
+          <div class="hero-logo-ring"></div>
           <img
-            src="assets/profile.jpg"
-            alt="Bluestars team lead"
-            class="hero-image"
+            src="assets/team-logo.jpg"
+            alt="Bluestars team logo"
+            class="hero-logo"
           />
         </div>
       </div>
@@ -105,6 +114,19 @@
           experience. It reflects discipline, collaboration, experimentation,
           and the energy of a team building toward the future together.
         </p>
+      </div>
+    </section>
+
+    <section class="quote-section section">
+      <div class="glass quote-card reveal">
+        <p class="mini-title">DAILY INNOVATION SPARK</p>
+        <h2>Today's Innovation Quote</h2>
+        <p id="quoteText">
+          Great innovation begins with one disciplined step taken consistently.
+        </p>
+        <button class="btn primary quote-btn" id="quoteBtn" type="button">
+          Generate Inspiration
+        </button>
       </div>
     </section>
 
@@ -143,7 +165,7 @@
             <h3>Campus Life</h3>
             <p>
               College gives us an environment where ideas, ambition, and student
-              energy meet. It is the place where our team’s learning journey is
+              energy meet. It is the place where our team's learning journey is
               constantly shaped.
             </p>
           </div>
