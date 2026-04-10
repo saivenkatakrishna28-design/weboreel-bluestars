@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bluestars – A Day in the Life of Future Innovators</title>
+  <meta
+    name="description"
+    content="Bluestars is an interactive Weboreel experience showcasing student life, teamwork, coding, AI exploration, and future ambition."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-overlay"></div>
+  <div class="particles" aria-hidden="true"></div>
+
+  <header class="navbar">
+    <a href="#hero" class="logo">BLUESTARS</a>
+
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav id="navMenu">
+      <a href="#hero">Home</a>
+      <a href="#journey">Journey</a>
+      <a href="#collaboration">Teamwork</a>
+      <a href="#analyzer">Analyzer</a>
+      <a href="#insights">Insights</a>
+      <a href="#team">Team</a>
+    </nav>
+
+    <a href="#analyzer" class="nav-btn">Explore</a>
+  </header>
+
+  <main>
+    <section id="hero" class="hero section">
+      <div class="hero-content glass reveal">
+        <div class="hero-text">
+          <p class="tag">NATIONAL LEVEL WEBOREEL AI HACKATHON</p>
+
+          <h1>
+            Bluestars –
+            <span>A Day in the Life of Future Innovators</span>
+          </h1>
+
+          <p class="hero-description">
+            We are Bluestars, a team of students transforming daily learning,
+            teamwork, coding, creativity, and ambition into a shared journey
+            toward future-ready innovation.
+          </p>
+
+          <div class="typed-wrap">
+            <span class="typed-label">We are </span>
+            <span id="typed-text"></span>
+            <span class="cursor">|</span>
+          </div>
+
+          <div class="hero-actions">
+            <a href="#journey" class="btn primary">Start Our Journey</a>
+            <a href="#team" class="btn secondary">Meet the Team</a>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-card">
+              <h3>4</h3>
+              <p>Core Members</p>
+            </div>
+            <div class="stat-card">
+              <h3>1</h3>
+              <p>Shared Vision</p>
+            </div>
+            <div class="stat-card">
+              <h3>∞</h3>
+              <p>Growth Mindset</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-image-wrap">
+          <div class="hero-image-ring"></div>
+          <img
+            src="assets/profile.jpg"
+            alt="Nune Sai Venkata Krishna"
+            class="hero-image"
+          />
+        </div>
+      </div>
+    </section>
+
+    <section class="intro-strip section reveal">
+      <div class="glass intro-card">
+        <p class="mini-title">OUR PROJECT STORY</p>
+        <h2>More than a routine. More than a website.</h2>
+        <p>
+          This Weboreel transforms student life into an interactive digital
+          experience. It reflects discipline, collaboration, experimentation,
+          and the energy of a team building toward the future together.
+        </p>
+      </div>
+    </section>
+
+    <section id="journey" class="timeline-section section">
+      <div class="section-heading reveal">
+        <p class="mini-title">OUR DAILY JOURNEY</p>
+        <h2>From Daily Discipline to Collective Innovation</h2>
+        <p>
+          Every stage of our day reflects learning, teamwork, and the belief
+          that meaningful innovation grows through consistent effort.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <article class="timeline-card glass reveal">
+          <div class="timeline-image">
+            <img src="assets/morning.jpg" alt="Morning planning setup" />
+          </div>
+          <div class="timeline-content">
+            <span class="time-badge">6:30 AM</span>
+            <h3>Morning Motivation</h3>
+            <p>
+              The day starts with focus, intention, and preparation. Clear goals
+              in the morning help us stay aligned, productive, and mentally ready
+              to move forward.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card glass reveal reverse">
+          <div class="timeline-image">
+            <img src="assets/college-building.jpg" alt="College building" />
+          </div>
+          <div class="timeline-content">
+            <span class="time-badge">9:00 AM</span>
+            <h3>Campus Life</h3>
+            <p>
+              College gives us an environment where ideas, ambition, and student
+              energy meet. It is the place where our team’s learning journey is
+              constantly shaped.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card glass reveal">
+          <div class="timeline-image">
+            <img src="assets/classroom.jpg" alt="Classroom learning" />
+          </div>
+          <div class="timeline-content">
+            <span class="time-badge">11:00 AM</span>
+            <h3>Classroom Learning</h3>
+            <p>
+              Every lesson builds our foundation. Concepts learned in class
+              strengthen the critical thinking and technical clarity that support
+              everything we create together.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card glass reveal reverse">
+          <div class="timeline-image">
+            <img src="assets/coding-setup.jpg" alt="Coding setup" />
+          </div>
+          <div class="timeline-content">
+            <span class="time-badge">4:00 PM</span>
+            <h3>Coding Sprint</h3>
+            <p>
+              This is where ideas turn into reality. Through coding, iteration,
+              and implementation, our team converts vision into something real,
+              interactive, and meaningful.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card glass reveal">
+          <div class="timeline-image">
+            <img src="assets/ai-ml.jpg" alt="AI and innovation concept" />
+          </div>
+          <div class="timeline-content">
+            <span class="time-badge">7:00 PM</span>
+            <h3>AI & Innovation Zone</h3>
+            <p>
+              We explore future-facing technology, AI-driven ideas, and the
+              possibilities that inspire us to think beyond the ordinary and
+              build for tomorrow.
+            </p>
+          </div>
+        </article>
+
+        <article class="timeline-card glass reveal reverse">
+          <div class="timeline-image">
+            <img src="assets/evening-study.jpg" alt="Evening study setup" />
+          </div>
+          <div class="timeline-content">
+            <span class="time-badge">10:00 PM</span>
+            <h3>Reflection & Next Steps</h3>
+            <p>
+              The day ends with reflection, planning, and a stronger sense of
+              direction. Progress grows through teamwork, review, and the will
+              to improve every step.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="collaboration" class="collaboration section">
+      <div class="section-heading reveal">
+        <p class="mini-title">HOW WE BUILD TOGETHER</p>
+        <h2>Collaboration Turns Effort into Innovation</h2>
+        <p>
+          Our strength lies in shared ideas, thoughtful role distribution,
+          creative execution, and constant refinement as a team.
+        </p>
+      </div>
+
+      <div class="collab-grid">
+        <div class="glass collab-card reveal">
+          <div class="icon">01</div>
+          <h3>Idea Discussion</h3>
+          <p>
+            We begin by shaping the core concept, purpose, and experience so
+            every part of the project follows a strong shared direction.
+          </p>
+        </div>
+
+        <div class="glass collab-card reveal">
+          <div class="icon">02</div>
+          <h3>Role Distribution</h3>
+          <p>
+            Each member contributes through their strengths in design, content,
+            logic, project support, research, and overall refinement.
+          </p>
+        </div>
+
+        <div class="glass collab-card reveal">
+          <div class="icon">03</div>
+          <h3>Creative Execution</h3>
+          <p>
+            We bring together visuals, storytelling, and development to turn an
+            ordinary idea into an engaging digital experience.
+          </p>
+        </div>
+
+        <div class="glass collab-card reveal">
+          <div class="icon">04</div>
+          <h3>Testing & Improvement</h3>
+          <p>
+            Feedback and iteration help us polish the final result so that the
+            project feels smoother, stronger, and more impactful.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="impact section">
+      <div class="glass impact-card reveal">
+        <p class="mini-title">WHY THIS MATTERS</p>
+        <h2>Student Life Is a Story of Growth</h2>
+        <p>
+          This project shows that student life is not just routine. It is
+          ambition, teamwork, learning, resilience, and the courage to build.
+          Through Bluestars, we present everyday effort as an inspiring story of
+          future innovators.
+        </p>
+      </div>
+    </section>
+
+    <section id="analyzer" class="analyzer section">
+      <div class="section-heading reveal">
+        <p class="mini-title">INTERACTIVE EXPERIENCE</p>
+        <h2>Discover Your Innovation Persona</h2>
+        <p>
+          Answer a few quick questions and find the type of learner, creator, or
+          innovator you are.
+        </p>
+      </div>
+
+      <div class="analyzer-grid">
+        <div class="glass form-card reveal">
+          <form id="personaForm">
+            <div class="form-group">
+              <label for="name">Your Name</label>
+              <input type="text" id="name" placeholder="Enter your name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="wake">When are you most active?</label>
+              <select id="wake" required>
+                <option value="">Select</option>
+                <option value="early">Early Morning</option>
+                <option value="balanced">Balanced Through the Day</option>
+                <option value="late">Late Evening / Night</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="focus">What excites you most?</label>
+              <select id="focus" required>
+                <option value="">Select</option>
+                <option value="building">Building projects</option>
+                <option value="thinking">Solving ideas and strategy</option>
+                <option value="leading">Guiding people and collaboration</option>
+                <option value="exploring">Exploring new technologies</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="goal">What describes your future goal best?</label>
+              <select id="goal" required>
+                <option value="">Select</option>
+                <option value="ai">AI / ML</option>
+                <option value="software">Software / Development</option>
+                <option value="innovation">Innovation / Startup</option>
+                <option value="leadership">Leadership / Team Growth</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="style">How do you work best?</label>
+              <select id="style" required>
+                <option value="">Select</option>
+                <option value="solo">Focused solo work</option>
+                <option value="team">Collaborative teamwork</option>
+                <option value="mixed">A mix of both</option>
+                <option value="creative">Flexible creative flow</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn primary full-btn">Find My Persona</button>
+          </form>
+        </div>
+
+        <div class="glass result-card reveal" id="resultCard">
+          <p class="result-placeholder">Your innovation persona will appear here.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="insights" class="insights section">
+      <div class="section-heading reveal">
+        <p class="mini-title">COMMUNITY INSIGHTS</p>
+        <h2>What Drives Future Innovators?</h2>
+        <p>
+          These insights represent strong patterns seen in growth-focused
+          students who build, collaborate, and dream bigger.
+        </p>
+      </div>
+
+      <div class="insight-cards">
+        <div class="glass insight-card reveal">
+          <h3>Creative Builders</h3>
+          <div class="progress-bar">
+            <div class="progress-fill fill-82"></div>
+          </div>
+          <span>82%</span>
+        </div>
+
+        <div class="glass insight-card reveal">
+          <h3>Team-Driven Learners</h3>
+          <div class="progress-bar">
+            <div class="progress-fill fill-76"></div>
+          </div>
+          <span>76%</span>
+        </div>
+
+        <div class="glass insight-card reveal">
+          <h3>AI-Focused Dreamers</h3>
+          <div class="progress-bar">
+            <div class="progress-fill fill-71"></div>
+          </div>
+          <span>71%</span>
+        </div>
+      </div>
+
+      <div class="glass notes-board reveal">
+        <h3>Wall of Growth</h3>
+        <div class="notes-grid">
+          <div class="note">Teamwork turns ideas into impact.</div>
+          <div class="note">Consistency creates confidence.</div>
+          <div class="note">Innovation begins with curiosity.</div>
+          <div class="note">Student life can launch big futures.</div>
+          <div class="note">Collaboration makes creativity stronger.</div>
+          <div class="note">Every project is a step toward something bigger.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team" class="team section">
+      <div class="section-heading reveal">
+        <p class="mini-title">MEET BLUESTARS</p>
+        <h2>The Team Behind the Experience</h2>
+        <p>
+          A project becomes stronger when different strengths come together with
+          one shared purpose.
+        </p>
+      </div>
+
+      <div class="team-grid">
+        <div class="glass team-card reveal featured">
+          <img src="assets/profile.jpg" alt="Nune Sai Venkata Krishna" />
+          <h3>Nune Sai Venkata Krishna</h3>
+          <p class="role">Team Leader • Vision • UI • Story Direction</p>
+          <p>
+            Led the concept, storytelling flow, project identity, and overall
+            visual direction for Bluestars.
+          </p>
+        </div>
+
+        <div class="glass team-card reveal">
+          <div class="avatar-circle">D</div>
+          <h3>Donempudi Raj Kumar</h3>
+          <p class="role">Development • Logic • Support</p>
+          <p>
+            Contributed to implementation thinking, logical structure, and
+            strengthening the project through collaborative support.
+          </p>
+        </div>
+
+        <div class="glass team-card reveal">
+          <div class="avatar-circle">C</div>
+          <h3>Chaitanya Raja Gudivada</h3>
+          <p class="role">Content • Refinement • Team Contribution</p>
+          <p>
+            Supported the experience through content refinement, alignment, and
+            helping improve the overall project flow.
+          </p>
+        </div>
+
+        <div class="glass team-card reveal">
+          <div class="avatar-circle">M</div>
+          <h3>Murikupudi Jagadeeswar</h3>
+          <p class="role">Research • Coordination • Support</p>
+          <p>
+            Strengthened the project through support, contribution, coordination,
+            and team-based execution across the final experience.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Built by Team Bluestars for the National Level Weboreel AI Hackathon.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
